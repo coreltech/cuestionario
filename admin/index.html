@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Control | Coreltech</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="https://coreltech-it.vercel.app/assets/img/favicon.webp" type="image/webp">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --primary: #0066CC;
+      --secondary: #00C9B1;
+      --text: #2D3748;
+      --light: #F8F9FC;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+      --font-main: 'Poppins', sans-serif;
+      --transition: all 0.3s ease;
+      --font-size-base: 16px;
+      --border-radius-base: 12px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --shadow-hover: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    body {
+      font-family: var(--font-main);
+      color: var(--text);
+      background-color: var(--light);
+      line-height: 1.6;
+      font-size: var(--font-size-base);
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: var(--secondary);
+    }
+    /* =========================
+       = Header del Panel
+       ========================= */
+    .admin-header {
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      background: white;
+      border-radius: var(--border-radius-base);
+      box-shadow: var(--shadow);
+    }
+    .admin-title {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .admin-subtitle {
+      color: #555;
+      font-size: 1.1rem;
+    }
+    .logout-btn {
+      display: inline-block;
+      background-color: #e53e3e;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .logout-btn:hover {
+      background-color: #c53030;
+    }
+    /* =========================
+       = Login Form
+       ========================= */
+    #login-form {
+      max-width: 400px;
+      margin: 10% auto;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: var(--border-radius-base);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .login-title {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    .login-input {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .login-btn:hover {
+      background-color: var(--secondary);
+    }
+    /* =========================
+       = Dashboard
+       ========================= */
+    #dashboard {
+      display: none;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--border-radius-base);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .stat-label {
+      font-size: 1rem;
+      color: #555;
+    }
+    .filters {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+    /* =========================
+       = Tabla de Leads
+       ========================= */
+    .leads-list {
+      background: white;
+      border-radius: var(--border-radius-base);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .lead-item {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+    .lead-item:hover {
+      background-color: #f1f5f9;
+    }
+    .lead-info {
+      flex: 1;
+    }
+    .lead-name {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .lead-email {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .lead-type {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      background: #E6F7FF;
+      color: #0066CC;
+    }
+    .lead-paquete {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .paquete-basico {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+    .paquete-medio {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    .paquete-avanzado {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .lead-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .btn-action {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    .btn-whatsapp:hover {
+      background: #128C7E;
+    }
+    .btn-csv {
+      background: #4A5568;
+      color: white;
+    }
+    .btn-csv:hover {
+      background: #2D3748;
+    }
+    /* =========================
+       = Responsive
+       ========================= */
+    @media (max-width: 768px) {
+      .admin-title { font-size: 2rem; }
+      .stat-number { font-size: 2rem; }
+      .lead-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .lead-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 📁 Formulario de Login -->
+  <div id="login-form">
+    <h2 class="login-title">🔐 Acceso al Panel</h2>
+    <input type="email" id="email" placeholder="Tu correo" class="login-input" value="admin@coreltech.com">
+    <input type="password" id="password" placeholder="Contraseña" class="login-input">
+    <button onclick="login()" class="login-btn">Ingresar</button>
+  </div>
+
+  <!-- 📊 Dashboard Principal -->
+  <div id="dashboard">
+    <div class="admin-header">
+      <h1 class="admin-title">Panel de Control - Coreltech</h1>
+      <p class="admin-subtitle">Gestión de leads del cuestionario web e Instagram</p>
+      <button onclick="logout()" class="logout-btn">Cerrar sesión</button>
+    </div>
+
+    <div class="container">
+      <!-- Estadísticas -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="total-leads">0</div>
+          <div class="stat-label">Total de Leads</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="leads-web">0</div>
+          <div class="stat-label">Leads Web</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="leads-instagram">0</div>
+          <div class="stat-label">Leads Instagram</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="paquete-avanzado">0</div>
+          <div class="stat-label">Paquetes Avanzados</div>
+        </div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <button class="filter-btn active" onclick="filtrar('todos')">Todos</button>
+        <button class="filter-btn" onclick="filtrar('web')">Web</button>
+        <button class="filter-btn" onclick="filtrar('instagram')">Instagram</button>
+        <button class="filter-btn" onclick="descargarCSV()">📥 Descargar CSV</button>
+      </div>
+
+      <!-- Lista de Leads -->
+      <div class="leads-list" id="leads-list">
+        <!-- Los leads se cargarán aquí dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    // 🔧 CONFIGURACIÓN DE FIREBASE
+    const firebaseConfig = {
+      apiKey: "AIzaSyDD7Wp_TpfHKHfdDqaCLqWbjX5E3WZllGA",
+      authDomain: "coreltech-it.firebaseapp.com",
+      projectId: "coreltech-it",
+      storageBucket: "coreltech-it.firebasestorage.app",
+      messagingSenderId: "776481773634",
+      appId: "1:776481773634:web:8608f6a15710cdb10775db"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // 📊 Variables de conteo
+    let todosLeads = [];
+
+    // 🔐 Login
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      auth.signInWithEmailAndPassword(email, password)
+        .catch(error => alert('❌ Credenciales incorrectas'));
+    }
+
+    // 🔐 Logout
+    function logout() {
+      auth.signOut();
+    }
+
+    // 📊 Mostrar/Ocultar dashboard
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        cargarLeads();
+      } else {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('dashboard').style.display = 'none';
+      }
+    });
+
+    // 📥 Cargar leads desde Firestore
+    function cargarLeads() {
+      const leadsList = document.getElementById('leads-list');
+      const totalLeads = document.getElementById('total-leads');
+      const leadsWeb = document.getElementById('paquete-web');
+      const leadsInstagram = document.getElementById('paquete-instagram');
+      const paqueteAvanzado = document.getElementById('paquete-avanzado');
+
+      let total = 0, web = 0, instagram = 0, avanzado = 0;
+      leadsList.innerHTML = '';
+      todosLeads = [];
+
+      // Leer de ambas colecciones
+      Promise.all([
+        db.collection('leads-web').get(),
+        db.collection('leads-instagram').get()
+      ]).then(snapshots => {
+        snapshots[0].forEach(doc => {
+          const data = doc.data();
+          const lead = { ...data, id: doc.id, tipo: 'web' };
+          if (lead.paquete && lead.paquete.includes('Avanzado')) avanzado++;
+          web++;
+          todosLeads.push(lead);
+        });
+        snapshots[1].forEach(doc => {
+          const data = doc.data();
+          const lead = { ...data, id: doc.id, tipo: 'instagram' };
+          if (lead.paquete && lead.paquete.includes('Avanzado')) avanzado++;
+          instagram++;
+          todosLeads.push(lead);
+        });
+
+        total = todosLeads.length;
+        totalLeads.textContent = total;
+        document.getElementById('leads-web').textContent = web;
+        document.getElementById('leads-instagram').textContent = instagram;
+        paqueteAvanzado.textContent = avanzado;
+
+        mostrarLeads(todosLeads);
+      }).catch(error => {
+        console.error('Error al cargar leads:', error);
+        leadsList.innerHTML = '<p style="text-align: center; padding: 2rem;">❌ Error al cargar datos</p>';
+      });
+    }
+
+    // 🖼 Mostrar leads en la lista
+    function mostrarLeads(leads) {
+      const leadsList = document.getElementById('leads-list');
+      leadsList.innerHTML = '';
+      leads.forEach(lead => {
+        const paqueteClass = lead.paquete?.includes('Básico') ? 'paquete-basico' :
+                           lead.paquete?.includes('Medio') ? 'paquete-medio' : 'paquete-avanzado';
+        const paqueteNombre = lead.paquete || '🟢 Básico';
+
+        const leadItem = document.createElement('div');
+        leadItem.className = 'lead-item';
+        leadItem.innerHTML = `
+          <div class="lead-info">
+            <div class="lead-name">${lead.nombre_cliente || lead.nombre || 'Sin nombre'}</div>
+            <div class="lead-email">${lead.email_contacto || lead.email || 'Sin email'}</div>
+          </div>
+          <div class="lead-type">${lead.tipo === 'web' ? '🌐 Web' : '📸 Instagram'}</div>
+          <div class="lead-paquete ${paqueteClass}">${paqueteNombre}</div>
+          <div class="lead-actions">
+            <button class="btn-action btn-whatsapp" onclick="abrirWhatsApp('${lead.telefono || ''}')">💬 WhatsApp</button>
+          </div>
+        `;
+        leadsList.appendChild(leadItem);
+      });
+    }
+
+    // 🔍 Filtrar leads
+    function filtrar(tipo) {
+      const botones = document.querySelectorAll('.filter-btn');
+      botones.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (tipo === 'todos') {
+        mostrarLeads(todosLeads);
+      } else {
+        const filtrados = todosLeads.filter(l => l.tipo === tipo);
+        mostrarLeads(filtrados);
+      }
+    }
+
+    // 💬 Abrir WhatsApp
+    function abrirWhatsApp(telefono) {
+      if (!telefono) {
+        alert('⚠️ No tiene número registrado');
+        return;
+      }
+      window.open(`https://wa.me/${telefono.replace(/\D/g, '')}`, '_blank');
+    }
+
+    // 📥 Descargar CSV
+    function descargarCSV() {
+      if (todosLeads.length === 0) {
+        alert('⚠️ No hay datos para exportar');
+        return;
+      }
+
+      // Encabezados
+      const headers = ['ID', 'Nombre', 'Email', 'Teléfono', 'Tipo', 'Paquete', 'Fecha'];
+      const rows = [
+        headers.join(','),
+        ...todosLeads.map(l => {
+          const fecha = l.fecha?.toDate ? l.fecha.toDate().toLocaleString() : '';
+          return [
+            l.id,
+            `"${l.nombre_cliente || l.nombre || ''}"`,
+            `"${l.email_contacto || l.email || ''}"`,
+            `"${l.telefono || ''}"`,
+            l.tipo,
+            `"${l.paquete || ''}"`,
+            `"${fecha}"`
+          ].join(',');
+        })
+      ];
+
+      const csv = rows.join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', `leads-coreltech-${new Date().toISOString().split('T')[0]}.csv`);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Cuestionario para definir tu proyecto web. Completa y recibe una propuesta personalizada.">
-  <title>Cuestionario para tu Página Web | Coreltech</title>
+  <meta name="description" content="Cuestionario para servicios de Instagram. Creamos o mejoramos tu cuenta profesional.">
+  <title>Cuestionario para Instagram | Coreltech</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <!-- Favicon -->
@@ -230,159 +230,122 @@
   <!-- 🎯 Hero Principal -->
   <section class="hero-landing">
     <div class="hero-content">
-      <h1 class="hero-title">¿Listo para tu página web profesional?</h1>
-      <p class="hero-subtitle">Completa este cuestionario para que entendamos tu negocio, objetivos y visión. Así crearemos un sitio que funcione para ti.</p>
+      <h1 class="hero-title">¿Quieres una cuenta de Instagram que venda?</h1>
+      <p class="hero-subtitle">Completa este cuestionario para que entendamos tu marca y creemos una estrategia profesional.</p>
       <a href="#cuestionario" class="btn-primary">Comenzar Cuestionario</a>
-      <a href="https://coreltech-web.vercel.app" target="_blank" class="btn-primary btn-secondary">Ver ejemplos</a>
+      <a href="https://instagram.com/coreltechsoluciones" target="_blank" class="btn-primary btn-secondary">Ver nuestro Instagram</a>
     </div>
   </section>
 
-  <!-- 📝 Cuestionario Completo -->
+  <!-- 📝 Cuestionario Instagram -->
   <section id="cuestionario" class="container">
-    <form id="web-form">
+    <form id="ig-form">
 
-      <!-- Sección 1: Información General -->
+      <!-- Sección 1: Información -->
       <div class="form-section">
-        <h2 class="section-title">1. Información del Proyecto</h2>
-        <label>Nombre del cliente o empresa *</label>
-        <input type="text" name="nombre_cliente" required>
-        <div class="label-help">ej: Clínica Salud Total, ModaVenezuela C.A.</div>
-
-        <label>Nombre del contacto *</label>
-        <input type="text" name="nombre_contacto" required>
+        <h2 class="section-title">1. Información del Cliente</h2>
+        <label>Nombre *</label>
+        <input type="text" name="nombre" required>
         <div class="label-help">quién tomará decisiones</div>
 
+        <label>Empresa o marca *</label>
+        <input type="text" name="marca" required>
+        <div class="label-help">ej: ModaVenezuela, Clínica Salud Total</div>
+
         <label>Correo electrónico *</label>
-        <input type="email" name="email_contacto" required>
+        <input type="email" name="email" required>
         <div class="label-help">ej: contacto@empresa.com</div>
 
         <label>Teléfono</label>
         <input type="tel" name="telefono">
         <div class="label-help">ej: +58 414 582 8186</div>
 
-        <label>Tipo de proyecto *</label>
-        <select name="tipo_proyecto" required>
-          <option value="">Selecciona una opción</option>
-          <option value="nuevo">Nuevo sitio web</option>
-          <option value="rediseño">Rediseño de sitio existente</option>
-          <option value="migracion">Migración de plataforma</option>
+        <label>¿Tienes cuenta de Instagram? *</label>
+        <select name="tiene_cuenta" required>
+          <option value="si">Sí, @____________</option>
+          <option value="no">No, quiero crearla desde cero</option>
         </select>
-        <div class="label-help">Si es una actualización, ¿puedes compartir el enlace del sitio actual?</div>
       </div>
 
-      <!-- Sección 2: Objetivo del Sitio -->
+      <!-- Sección 2: Objetivo -->
       <div class="form-section">
-        <h2 class="section-title">2. Objetivo del Sitio Web</h2>
+        <h2 class="section-title">2. Objetivo de Instagram</h2>
         <label>¿Cuál es el propósito principal?</label>
-        <select name="proposito_principal" required>
-          <option value="">Selecciona una opción</option>
+        <select name="objetivo" required>
           <option value="vender">Vender productos o servicios</option>
           <option value="leads">Generar contactos o leads</option>
-          <option value="portafolio">Mostrar portafolio o proyectos</option>
-          <option value="informar">Informar o educar (blog, recursos)</option>
-          <option value="reservar">Reservar citas o servicios</option>
+          <option value="marca">Aumentar reconocimiento de marca</option>
+          <option value="influencer">Posicionar como experto o influencer</option>
+          <option value="eventos">Promocionar eventos o lanzamientos</option>
           <option value="otro">Otro</option>
         </select>
-        <div class="label-help">¿Qué debe hacer un visitante? ej: comprar, llenar un formulario, agendar una llamada</div>
+        <div class="label-help">¿Qué debe hacer un seguidor? ej: visitar sitio, enviar DM, comprar</div>
 
         <label>¿Tienes un objetivo claro que quieras alcanzar?</label>
-        <textarea name="objetivo_negocio" placeholder="ej: vender 20 productos al mes, recibir 50 solicitudes de contacto, aparecer en Google para 'plomero en Caracas'"></textarea>
+        <textarea name="objetivo_negocio" placeholder="ej: conseguir 100 seguidores reales en 30 días, vender 20 productos al mes..."></textarea>
       </div>
 
       <!-- Sección 3: Público Objetivo -->
       <div class="form-section">
         <h2 class="section-title">3. Tu Público Objetivo</h2>
         <label>Describe a tu cliente ideal:</label>
-        <textarea name="publico_objetivo" placeholder="Edad, género, ubicación, profesión, intereses, problema que resuelves"></textarea>
+        <textarea name="publico_objetivo" placeholder="Edad, género, ubicación, intereses, problema que resuelves"></textarea>
         <div class="label-help">ej: Mujeres de 25-45 años, de clase media, interesadas en salud natural, en Venezuela y EE.UU.</div>
 
-        <label>¿Cómo encuentran información sobre negocios como el tuyo?</label>
-        <input type="text" name="canales_busqueda" placeholder="Google, Instagram, WhatsApp, recomendaciones...">
+        <label>¿Dónde pasa más tiempo tu público?</label>
+        <input type="text" name="canales_busqueda" placeholder="Instagram, TikTok, WhatsApp, Google...">
       </div>
 
-      <!-- Sección 4: Diseño y Estilo -->
+      <!-- Sección 4: Contenido y Estilo -->
       <div class="form-section">
-        <h2 class="section-title">4. Diseño y Estilo</h2>
-        <label>¿Tienes alguna página web que te guste como referencia visual?</label>
-        <input type="text" name="sitios_referencia" placeholder="https://apple.com, https://airbnb.com">
-        <div class="label-help">Puedes poner 1-3 URLs</div>
-
-        <label>¿Qué estilo prefieres para tu sitio?</label>
-        <select name="estilo_deseado">
-          <option value="moderno">Moderno y limpio</option>
-          <option value="corporativo">Corporativo y profesional</option>
-          <option value="creativo">Creativo y artístico</option>
-          <option value="minimalista">Mínimo y elegante</option>
-          <option value="otro">Otro</option>
-        </select>
-        <div class="label-help">¿Tienes logo, colores o tipografías definidas?</div>
-      </div>
-
-      <!-- Sección 5: Contenido -->
-      <div class="form-section">
-        <h2 class="section-title">5. Contenido del Sitio</h2>
-        <label>¿Qué páginas debe incluir tu sitio web?</label>
-        <input type="text" name="paginas_requeridas" placeholder="Inicio, Nosotros, Servicios, Productos, Blog, Contacto...">
-        <div class="label-help">ej: Inicio, Nosotros, Servicios, Contacto</div>
-
-        <label>¿Ya tienes listo el contenido (textos, fotos, videos)?</label>
+        <h2 class="section-title">4. Contenido y Estilo</h2>
+        <label>¿Tienes fotos, videos o reels listos?</label>
         <select name="contenido_listo">
           <option value="si">Sí, todo listo</option>
           <option value="parcial">Parcialmente</option>
           <option value="no">No, necesito ayuda</option>
         </select>
-        <div class="label-help">Si no, podemos ayudarte a crearlo</div>
 
-        <label>¿Qué contenido es más importante destacar?</label>
-        <textarea name="contenido_destacado" placeholder="Testimonios, catálogo, servicios más vendidos, proyectos anteriores..."></textarea>
+        <label>¿Qué estilo prefieres?</label>
+        <select name="estilo_deseado">
+          <option value="profesional">Profesional y limpio</option>
+          <option value="creativo">Creativo y artístico</option>
+          <option value="divertido">Divertido y cercano</option>
+          <option value="educativo">Educativo (tips, tutoriales)</option>
+          <option value="detrás">Detrás de escena</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <label>¿Tienes cuentas de referencia que te gusten? (@usuarios)</label>
+        <input type="text" name="referencias">
+        <div class="label-help">ej: @apple, @nike, @tuinspiracion</div>
       </div>
 
-      <!-- Sección 6: Funcionalidades -->
+      <!-- Sección 5: Funcionalidades -->
       <div class="form-section">
-        <h2 class="section-title">6. Funcionalidades</h2>
-        <p style="color: #555; font-size: 0.95rem;">Selecciona todas las que necesites:</p>
+        <h2 class="section-title">5. Funcionalidades</h2>
+        <p style="color: #555; font-size: 0.95rem;">Selecciona lo que necesites:</p>
         <div class="checkbox-group">
-          <label><input type="checkbox" name="funcionalidades" value="e-commerce"> Tienda online</label>
-          <label><input type="checkbox" name="funcionalidades" value="blog"> Blog / Noticias</label>
-          <label><input type="checkbox" name="funcionalidades" value="reservas"> Sistema de reservas</label>
-          <label><input type="checkbox" name="funcionalidades" value="login"> Área de miembros</label>
-          <label><input type="checkbox" name="funcionalidades" value="multilenguaje"> Multilenguaje</label>
-          <label><input type="checkbox" name="funcionalidades" value="chat"> Chat en vivo (WhatsApp)</label>
-          <label><input type="checkbox" name="funcionalidades" value="newsletter"> Newsletter</label>
-          <label><input type="checkbox" name="funcionalidades" value="seo"> SEO avanzado</label>
+          <label><input type="checkbox" name="funcionalidades" value="tienda"> Tienda en Instagram</label>
+          <label><input type="checkbox" name="funcionalidades" value="reels"> Reels y videos cortos</label>
+          <label><input type="checkbox" name="funcionalidades" value="historias"> Historias destacadas</label>
+          <label><input type="checkbox" name="funcionalidades" value="programacion"> Programación de publicaciones</label>
+          <label><input type="checkbox" name="funcionalidades" value="engagement"> Gestión de engagement</label>
+          <label><input type="checkbox" name="funcionalidades" value="reportes"> Reportes de crecimiento</label>
         </div>
-        <div class="label-help">¿No estás seguro? Te ayudamos a definir qué necesitas según tu negocio.</div>
       </div>
 
-      <!-- Sección 7: Dominio y Hosting -->
+      <!-- Sección 6: Plazos y Presupuesto -->
       <div class="form-section">
-        <h2 class="section-title">7. Dominio y Hosting</h2>
-        <label>¿Tienes un dominio registrado? (ej: tudominio.com)</label>
-        <select name="tiene_dominio">
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-          <option value="ayuda">Necesito ayuda para elegirlo</option>
-        </select>
-
-        <label>¿Tienes hosting contratado?</label>
-        <select name="tiene_hosting">
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-          <option value="ayuda">Necesito que lo gestionen</option>
-        </select>
-      </div>
-
-      <!-- Sección 8: Plazos y Presupuesto -->
-      <div class="form-section">
-        <h2 class="section-title">8. Plazos y Presupuesto</h2>
-        <label>¿Tienes una fecha estimada de lanzamiento?</label>
-        <input type="text" name="fecha_lanzamiento" placeholder="ej: antes de una campaña, para una feria...">
+        <h2 class="section-title">6. Plazos y Presupuesto</h2>
+        <label>¿Cuándo quieres que esté lista tu estrategia?</label>
+        <input type="text" name="fecha_lanzamiento" placeholder="ej: antes de una campaña, para un lanzamiento...">
         <div class="label-help">¿Tienes un presupuesto aproximado en mente?</div>
 
         <select name="presupuesto">
-          <option value="bajo">Menos de $500 USD</option>
-          <option value="medio">$500 – $1,500 USD</option>
-          <option value="alto">Más de $1,500 USD</option>
+          <option value="bajo">Menos de $300 USD</option>
+          <option value="medio">$300 – $600 USD</option>
+          <option value="alto">Más de $600 USD</option>
           <option value="no_se">Aún no lo sé</option>
         </select>
         <div class="label-help">No te preocupes si no lo tienes claro. Te enviaremos una propuesta ajustada.</div>
@@ -392,14 +355,14 @@
       <div class="form-section form-actions">
         <button type="submit" class="btn-primary">Enviar Respuestas ✅</button>
         <p style="color: #777; margin-top: 1rem; font-size: 0.9rem;">
-          Tus respuestas son confidenciales y nos ayudarán a crear tu sitio web ideal.
+          Tus respuestas nos ayudarán a crear una estrategia de Instagram profesional para tu marca.
         </p>
       </div>
 
     </form>
   </section>
 
-  <!-- 📌 Footer Minimalista -->
+  <!-- 📌 Footer -->
   <footer class="footer-minimal">
     <div class="container">
       <p>&copy; <span id="year"></span> Coreltech IT Solutions. Todos los derechos reservados.</p>
@@ -409,12 +372,12 @@
   <!-- ✅ PDF Template (oculto) -->
   <div id="pdf-template" style="display: none; font-family: 'Poppins', sans-serif; color: #2D3748; max-width: 800px; margin: 0 auto; padding: 2rem;">
     <div style="text-align: center; margin-bottom: 2rem; border-bottom: 1px solid #E2E8F0; padding-bottom: 1rem;">
-      <h1 style="color: #0066CC; margin: 0;">Propuesta de Servicio</h1>
+      <h1 style="color: #0066CC; margin: 0;">Propuesta para Instagram</h1>
       <p style="color: #555; margin: 0;">Coreltech IT Solutions</p>
     </div>
     <div style="margin-bottom: 1.5rem;">
       <h3 style="color: #0066CC; margin-bottom: 0.5rem;">👋 Hola, <span id="pdf-nombre-cliente"></span></h3>
-      <p>Gracias por completar el cuestionario. Basado en lo que nos compartiste, aquí tienes una propuesta personalizada para tu proyecto web.</p>
+      <p>Gracias por completar el cuestionario. Basado en lo que nos compartiste, aquí tienes una propuesta para tu cuenta de Instagram.</p>
     </div>
     <div style="background: #E6F7FF; border-left: 4px solid #0066CC; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
       <h4 style="margin-top: 0; color: #0066CC;">💡 Paquete Recomendado</h4>
@@ -423,21 +386,21 @@
       <p id="pdf-paquete-descripcion"></p>
     </div>
     <div style="margin-bottom: 1.5rem;">
-      <h4 style="color: #0066CC;">🔧 Funcionalidades incluidas</h4>
+      <h4 style="color: #0066CC;">🔧 Servicios incluidos</h4>
       <ul id="pdf-funcionalidades" style="line-height: 1.6;"></ul>
     </div>
     <div style="margin-bottom: 1.5rem;">
       <h4 style="color: #0066CC;">📅 Plazos de Entrega</h4>
-      <p>Tiempo estimado: <strong id="pdf-plazo">4-5 semanas</strong></p>
+      <p>Tiempo estimado: <strong id="pdf-plazo">4-6 semanas</strong></p>
     </div>
     <div style="margin-bottom: 1.5rem;">
       <h4 style="color: #0066CC;">💰 Condiciones de Pago</h4>
       <p>• 50% al inicio del proyecto</p>
-      <p>• 50% al entregar el sitio</p>
-      <p>Incluye capacitación básica y soporte post-lanzamiento (1 mes)</p>
+      <p>• 50% al entregar la estrategia</p>
+      <p>Incluye capacitación básica y reportes mensuales</p>
     </div>
     <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #E2E8F0; color: #555;">
-      <p>¿Listo para comenzar? Confírmame y comenzamos tu proyecto en menos de 48 horas.</p>
+      <p>¿Listo para potenciar tu marca en Instagram? Confírmame y comenzamos.</p>
       <p style="font-size: 0.9rem;">&copy; <span id="pdf-year"></span> Coreltech IT Solutions. Todos los derechos reservados.</p>
     </div>
   </div>
@@ -449,7 +412,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <script>
-// 🔧 CONFIGURACIÓN DE FIREBASE
+    // 🔧 CONFIGURACIÓN DE FIREBASE
     const firebaseConfig = {
   apiKey: "AIzaSyB7FsIRbm9kKQP0e1phS-UiMyZfls0q9cU",
   authDomain: "coreltech-cuestionario.firebaseapp.com",
@@ -475,43 +438,44 @@
       }
     }
 
-    // 🧮 Paquetes de servicios
-    const PAQUETES_WEB = {
+    // 🧮 Paquetes de servicios para Instagram
+    const PAQUETES_IG = {
       basico: {
         nombre: "🟢 Básico",
-        precio: "$590 USD",
-        descripcion: "Sitio web con plantilla, 5 páginas, SEO básico, hosting 1 año."
+        precio: "$290 USD",
+        descripcion: "Optimización de perfil, 4 publicaciones, biografía profesional, enlace, historias destacadas."
       },
       medio: {
         nombre: "🟡 Medio",
-        precio: "$1,350 USD",
-        descripcion: "Diseño semi-personalizado, tienda online, blog, multilenguaje, SEO avanzado."
+        precio: "$550 USD",
+        descripcion: "Contenido semanal, 8 publicaciones + 4 reels, programación, engagement, reportes mensuales."
       },
       avanzado: {
         nombre: "🔵 Avanzado",
-        precio: "$2,300 USD",
-        descripcion: "Diseño 100% personalizado, tienda avanzada, integraciones, soporte 3 meses."
+        precio: "$950 USD",
+        descripcion: "Estrategia completa: tienda en IG, contenido diario, anuncios, crecimiento, reportes semanales."
       }
     };
 
-    // 🧠 Calcular paquete recomendado
-    function calcularPaqueteWeb(funcionalidades) {
-      if (!Array.isArray(funcionalidades)) return PAQUETES_WEB.basico;
+    // 🧠 Calcular paquete recomendado para Instagram
+    function calcularPaqueteIG(funcionalidades) {
+      if (!Array.isArray(funcionalidades)) return PAQUETES_IG.basico;
       const servicios = funcionalidades;
-      const puntaje = servicios.length + (servicios.includes('e-commerce') ? 2 : 0) + (servicios.includes('multilenguaje') ? 1 : 0);
-      return puntaje >= 5 ? PAQUETES_WEB.avanzado : puntaje >= 3 ? PAQUETES_WEB.medio : PAQUETES_WEB.basico;
+      const tieneTienda = servicios.includes('tienda');
+      const tieneProgramacion = servicios.includes('programacion');
+      const tieneReels = servicios.includes('reels');
+      return tieneTienda || tieneProgramacion ? PAQUETES_IG.avanzado : tieneReels ? PAQUETES_IG.medio : PAQUETES_IG.basico;
     }
 
     // 📄 Generar PDF
     function generarPDF(entry, paquete) {
-      document.getElementById('pdf-nombre-cliente').textContent = entry.nombre_contacto;
-      document.getElementById('pdf-nombre-empresa').textContent = entry.nombre_cliente;
-      document.getElementById('pdf-email').textContent = entry.email_contacto;
-      document.getElementById('pdf-tipo-proyecto').textContent = entry.tipo_proyecto;
+      document.getElementById('pdf-nombre-cliente').textContent = entry.nombre;
+      document.getElementById('pdf-nombre-empresa').textContent = entry.marca;
+      document.getElementById('pdf-email').textContent = entry.email;
       document.getElementById('pdf-paquete-nombre').textContent = paquete.nombre;
       document.getElementById('pdf-paquete-precio').textContent = paquete.precio;
       document.getElementById('pdf-paquete-descripcion').textContent = paquete.descripcion;
-      document.getElementById('pdf-plazo').textContent = entry.fecha_lanzamiento || '4-5 semanas';
+      document.getElementById('pdf-plazo').textContent = entry.fecha_lanzamiento || '4-6 semanas';
 
       const ul = document.getElementById('pdf-funcionalidades');
       ul.innerHTML = '';
@@ -525,7 +489,7 @@
 
       const opt = {
         margin: 1,
-        filename: `Propuesta-${entry.nombre_cliente.replace(/\s/g, '_')}.pdf`,
+        filename: `Propuesta-Instagram-${entry.marca.replace(/\s/g, '_')}.pdf`,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'cm', format: 'a4', orientation: 'portrait' }
@@ -535,26 +499,30 @@
     }
 
     // 📥 Manejar envío del formulario
-    document.getElementById('web-form').addEventListener('submit', async function(e) {
+    document.getElementById('ig-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
       const entry = Object.fromEntries(data);
       entry.funcionalidades = data.getAll('funcionalidades');
-      const paquete = calcularPaqueteWeb(entry.funcionalidades);
+      const paquete = calcularPaqueteIG(entry.funcionalidades);
 
       try {
-        await db.collection('leads-web').add({ ...entry, fecha: new Date(), paquete: paquete.nombre });
+        await db.collection('leads-instagram').add({ ...entry, fecha: new Date(), paquete: paquete.nombre });
 
         const mensaje = `
-🌐 *NUEVO LEAD - PÁGINA WEB*
-👤 *Cliente:* ${entry.nombre_cliente}
-🎯 *Objetivo:* ${entry.proposito_principal}
+📸 *NUEVO LEAD - INSTAGRAM*
+👤 *Cliente:* ${entry.nombre}
+🏢 *Marca:* ${entry.marca}
+🎯 *Objetivo:* ${entry.objetivo}
 🔧 *Funcionalidades:* ${entry.funcionalidades.join(', ') || 'Ninguna'}
 💰 *Paquete Recomendado:* ${paquete.nombre}
 💵 *Precio:* ${paquete.precio}
-📩 *Email:* ${entry.email_contacto}
-#WebDev #Presupuesto
+📩 *Email:* ${entry.email}
+#Instagram #SocialMedia #${paquete.nombre.split(' ')[0]}
+
+✅ *¿Enviar propuesta?*
+👉 Revisa el panel: https://tusitio.vercel.app/admin
         `.trim();
         await enviarTelegram(mensaje);
 
